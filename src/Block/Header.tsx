@@ -137,6 +137,7 @@ const Container = styled.div`
   position: sticky;
   top: 0%;
   box-shadow: rgba(141, 136, 136, 0.24) 0px 3px 8px;
+  z-index: 45;
   img {
     height: 73px;
   }
@@ -146,6 +147,7 @@ const Holder = styled.div`
   display: flex;
   color: black;
   text-transform: uppercase;
+  margin-right: 29px;
   @media screen and (max-width: 960px) {
     display: none;
   }
