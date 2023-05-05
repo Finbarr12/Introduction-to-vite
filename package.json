@@ -10,13 +10,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.1.0",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@tanstack/react-query": "^4.29.5",
+    "@tanstack/react-query-devtools": "^4.29.6",
+    "@types/axios": "^0.14.0",
     "@types/styled-components": "^5.1.26",
+    "@types/yup": "^0.32.0",
+    "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.0",
+    "redux": "^4.2.1",
+    "redux-persist": "^6.0.0",
     "styled-components": "^5.3.10",
-    "sweetalert2": "^11.7.3"
+    "sweetalert2": "^11.7.5",
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

@@ -4,6 +4,8 @@ import Home from "../Pages/Home";
 import About from "../Pages/About";
 import Services from "../Pages/Services";
 import Contact from "../Pages/Contact";
+import SignUp from "../Pages/Signup";
+import Signin from "../Pages/Signin";
 
 export const MainRoute = createBrowserRouter([
   {
@@ -27,5 +29,13 @@ export const MainRoute = createBrowserRouter([
         element: <Contact />,
       },
     ],
+  },
+  {
+    path: "/signadmin",
+    element: <SignUp />,
+  },
+  {
+    path: "/signinadmin",
+    element: <Signin />,
   },
 ]);
