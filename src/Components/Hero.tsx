@@ -1,18 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import heroimg from "../Assets/home.jpg";
+import { Fade } from "react-awesome-reveal";
 
 const Hero = () => {
   return (
     <Container>
       <Wrapper>
-        <i>The Furniture That Defines You</i>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate{" "}
-          <br />
-          inventore porro illum incidunt nostrum iure, magni ab.
-        </p>
-        <Button>Purchase</Button>
+        <Fade cascade damping={0.1} triggerOnce>
+          <i>The Furniture That Defines You</i>
+
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate{" "}
+            <br />
+            inventore porro illum incidunt nostrum iure, magni ab.
+          </p>
+          <Button>Purchase</Button>
+        </Fade>
       </Wrapper>
     </Container>
   );

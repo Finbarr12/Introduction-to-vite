@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { Suspense, useContext, useState } from "react";
 import styled from "styled-components";
 import logo from "../Assets/BusinessLogo.png";
 import work from "../Assets/work.jpg";
@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { UseAppDispatch } from "../Global/Store";
 import { adminLogin } from "../Global/ReduxState";
+import { adminLogout } from "../Global/ReduxState";
 
 const Signin = () => {
   const dispatch = UseAppDispatch();
@@ -42,8 +43,8 @@ const Signin = () => {
       console.log("user", myData);
       dispatch(adminLogin(myData.data));
       Swal.fire({
-        title: "User registered sucessfully",
-        html: "redirecting to login",
+        title: "Admin looged in sucessfully",
+        html: "redirecting to Dashboard",
         timer: 1000,
         timerProgressBar: true,
 
@@ -52,51 +53,70 @@ const Signin = () => {
         },
       });
     },
+    onError: (myData: any) => {
+      console.log("err", myData.data);
+      Swal.fire({
+        icon: "error",
+        title: "User dosen't exist",
+        text: "Try again",
+        timer: 2000,
+        timerProgressBar: true,
+      });
+    },
   });
 
   const Submit = handleSubmit(async (data: any) => {
+    console.log(data);
+
     posting.mutate(data);
 
     // console.log(data);
   });
 
   return (
-    <Container>
-      <Card onSubmit={Submit}>
-        <Left bg="#19797a">{/* <Wrap></Wrap> */}</Left>
-        <Right>
-          <img src={logo} alt="" />
-          <h2>
-            <i>Welcome... Sign in</i>
-          </h2>
-          <p>Please fill in the required fields...</p>
+    <Suspense fallback={<h1>Loading...</h1>}>
+      <Container>
+        <Card onSubmit={Submit}>
+          <Left bg="#19797a">{/* <Wrap></Wrap> */}</Left>
+          <Right>
+            <img src={logo} alt="" />
+            <h2>
+              <i>Welcome... Sign in</i>
+            </h2>
+            <p>Please fill in the required fields...</p>
 
-          <input
-            type="text"
-            placeholder="Input a valid e-mail"
-            {...register("email")}
-          />
-          <input
-            type="password"
-            placeholder="Password..."
-            {...register("password")}
-          />
-          <div>
-            Don't have an account?{" "}
-            <NavLink
-              to="/signadmin"
-              style={{ textDecoration: "underline", color: "blue" }}
-            >
-              <span>Create One</span>
-            </NavLink>
-          </div>
+            <input
+              type="text"
+              placeholder="Input a valid e-mail"
+              {...register("email")}
+            />
+            <input
+              type="password"
+              placeholder="Password..."
+              {...register("password")}
+            />
+            <div>
+              Don't have an account?{" "}
+              <NavLink
+                to="/signadmin"
+                style={{ textDecoration: "underline", color: "blue" }}
+              >
+                <span>Create One</span>
+              </NavLink>
+            </div>
 
-          <button type="submit" style={{ cursor: "pointer" }}>
-            Sign in
-          </button>
-        </Right>
-      </Card>
-    </Container>
+            <button type="submit" style={{ cursor: "pointer" }}>
+              Sign in
+            </button>
+            <div
+              onClick={() => {
+                dispatch(adminLogout());
+              }}
+            ></div>
+          </Right>
+        </Card>
+      </Container>
+    </Suspense>
   );
 };
 

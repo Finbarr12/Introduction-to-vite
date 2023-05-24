@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
@@ -20,7 +20,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <Provider store={Store}>
       <PersistGate persistor={persitstore}>
         <QueryClientProvider client={queryQlient}>
-          <RouterProvider router={MainRoute} />
+          <Suspense fallback={<h1>LOADING..</h1>}>
+            <RouterProvider router={MainRoute} />
+          </Suspense>
           <ReactQueryDevtools />
         </QueryClientProvider>
       </PersistGate>

@@ -38,3 +38,16 @@ export const loginAdmin = async ({ email, password }: any) => {
       return res.data;
     });
 };
+
+export const AllProduct: any = async () => {
+  await axios.get("http://localhost:1112/api/products").then((res) => {
+    // return res.data;
+    console.log("this is data", res.data);
+  });
+};
+
+export const DeletePro = async (id: any) => {
+  await axios.get(`http://localhost:1112/api/delete/${id}`).then((res) => {
+    return res.data;
+  });
+};

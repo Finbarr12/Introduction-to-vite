@@ -1,11 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
+import { lazy } from "react";
 import Layout from "../Block/Layout";
-import Home from "../Pages/Home";
-import About from "../Pages/About";
-import Services from "../Pages/Services";
-import Contact from "../Pages/Contact";
-import SignUp from "../Pages/Signup";
-import Signin from "../Pages/Signin";
+import DahLayout from "../Block/DahLayout";
+
+const Home = lazy(() => import("../Pages/Home"));
+const About = lazy(() => import("../Pages/About"));
+const Services = lazy(() => import("../Pages/Services"));
+const Contact = lazy(() => import("../Pages/Contact"));
+const SignUp = lazy(() => import("../Pages/Signup"));
+const Signin = lazy(() => import("../Pages/Signin"));
+const DashHome = lazy(() => import("../Pages/DashHome"));
+const DashUpload = lazy(() => import("../Pages/DashUpload"));
 
 export const MainRoute = createBrowserRouter([
   {
@@ -37,5 +42,19 @@ export const MainRoute = createBrowserRouter([
   {
     path: "/signinadmin",
     element: <Signin />,
+  },
+  {
+    path: "/dashboard",
+    element: <DahLayout />,
+    children: [
+      {
+        index: true,
+        element: <DashHome />,
+      },
+      {
+        path: "/dashboard/uploads",
+        element: <DashUpload />,
+      },
+    ],
   },
 ]);

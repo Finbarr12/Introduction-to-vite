@@ -2,44 +2,47 @@ import Perfect from "../Components/Perfect";
 import styled from "styled-components";
 import table from "../Assets/table2.jpg";
 import AllHeros from "../Static/AllHeros";
+import { Fade } from "react-awesome-reveal";
 
 const Services = () => {
   return (
-    <div>
-      <AllHeros title="Services" />
-      <Container>
-        <Image>
-          <img src={table} alt="" />
-        </Image>
-        <Second>
-          <h4>SERVICES</h4>
-          <Held>
-            <h1>
-              <i>We Carefully Planned</i>
-            </h1>
-          </Held>
-          <p>
-            On her way she met a copy. The copy warned the Little Blind Text,
-            that where it came from it would have been rewritten a thousand
-            times and everything that was left from its origin would be the word
-            "and" and the Little Blind Text should turn around and return to its
-            own, safe country. But nothing the copy said could convince her and
-            so it didn’t take long until a few insidious Copy Writers ambushed
-            her, made her drunk with Longe and Parole and dragged her into their
-            agency, where they abused her for their.
-          </p>
-          <p>
-            When she reached the first hills of the Italic Mountains, she had a
-            last view back on the skyline of her hometown Bookmarksgrove, the
-            headline of Alphabet Village and the subline of her own road, the
-            Line Lane. Pityful a rethoric question ran over her cheek, then she
-            continued her way.
-          </p>
-          <button>Shop with us</button>
-        </Second>
-      </Container>
-      <Perfect />
-    </div>
+    <Fade cascade damping={0.1} triggerOnce>
+      <div>
+        <AllHeros title="Services" />
+        <Container>
+          <Image>
+            <img src={table} alt="" />
+          </Image>
+          <Second>
+            <h4>SERVICES</h4>
+            <Held>
+              <h1>
+                <i>We Carefully Planned</i>
+              </h1>
+            </Held>
+            <p>
+              On her way she met a copy. The copy warned the Little Blind Text,
+              that where it came from it would have been rewritten a thousand
+              times and everything that was left from its origin would be the
+              word "and" and the Little Blind Text should turn around and return
+              to its own, safe country. But nothing the copy said could convince
+              her and so it didn’t take long until a few insidious Copy Writers
+              ambushed her, made her drunk with Longe and Parole and dragged her
+              into their agency, where they abused her for their.
+            </p>
+            <p>
+              When she reached the first hills of the Italic Mountains, she had
+              a last view back on the skyline of her hometown Bookmarksgrove,
+              the headline of Alphabet Village and the subline of her own road,
+              the Line Lane. Pityful a rethoric question ran over her cheek,
+              then she continued her way.
+            </p>
+            <button>Shop with us</button>
+          </Second>
+        </Container>
+        <Perfect />
+      </div>
+    </Fade>
   );
 };
 

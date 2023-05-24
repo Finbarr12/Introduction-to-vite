@@ -3,6 +3,7 @@ import { userData } from "../Interface/interface";
 
 const initialState = {
   loginUser: {} as userData | null,
+  allProducts: [],
 };
 
 const ReduxState = createSlice({
@@ -15,9 +16,12 @@ const ReduxState = createSlice({
     adminLogout: (state) => {
       state.loginUser = null;
     },
+    allProducts: (state, action) => {
+      state.allProducts = action.payload;
+    },
   },
 });
 
-export const { adminLogin, adminLogout } = ReduxState.actions;
+export const { adminLogin, adminLogout, allProducts } = ReduxState.actions;
 
 export default ReduxState.reducer;

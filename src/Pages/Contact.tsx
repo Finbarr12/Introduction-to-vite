@@ -5,6 +5,7 @@ import { BsEnvelopeCheck } from "react-icons/bs";
 import axios from "axios";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import { Fade } from "react-awesome-reveal";
 const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -26,73 +27,84 @@ const Contact = () => {
           timer: 3000,
         });
         return res.data;
+      })
+      .catch((res) => {
+        Swal.fire({
+          title: "An error occured",
+          text: "Try again",
+          timer: 2000,
+          timerProgressBar: true,
+        });
+        return res.data;
       });
   };
 
   return (
-    <div>
-      <AllHeros title="Contact" />
-      <Container>
-        <h3>Contact Information</h3>
-        <AddressHold>
-          <p>
-            <span style={{ fontWeight: "800" }}> Address</span>: Suit 211,
-            floor2, Fedan Plaza opp Total Filling station
-            <br /> Ojo Alaba International Market road, Lagos
-          </p>
-          <p>
-            <span style={{ fontWeight: "800" }}>Phone</span>:+2347038244564
-          </p>
-          <p>
-            <span style={{ fontWeight: "800" }}>Email</span>:
-            chy4real1982@gmail.com
-          </p>
-        </AddressHold>
-        <BoxHold>
-          <HoldMssg onSubmit={SendMail}>
-            <Circle>
-              <BsEnvelopeCheck />
-            </Circle>
-            <h3 style={{ marginTop: "32px" }}>Send Us a Message</h3>
-            <InputHold>
-              <input
-                type="text"
-                placeholder="Input email"
+    <Fade cascade damping={0.1} triggerOnce>
+      <div>
+        <AllHeros title="Contact" />
+        <Container>
+          <h3>Contact Information</h3>
+          <AddressHold>
+            <p>
+              <span style={{ fontWeight: "800" }}> Address</span>: Suit 211,
+              floor2, Fedan Plaza opp Total Filling station
+              <br /> Ojo Alaba International Market road, Lagos
+            </p>
+            <p>
+              <span style={{ fontWeight: "800" }}>Phone</span>:+2347038244564
+            </p>
+            <p>
+              <span style={{ fontWeight: "800" }}>Email</span>:
+              chy4real1982@gmail.com
+            </p>
+          </AddressHold>
+          <BoxHold>
+            <HoldMssg onSubmit={SendMail}>
+              <Circle>
+                <BsEnvelopeCheck />
+              </Circle>
+              <h3 style={{ marginTop: "32px" }}>Send Us a Message</h3>
+              <InputHold>
+                <input
+                  type="text"
+                  placeholder="Input email"
+                  required
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                <input
+                  type="text"
+                  placeholder="Input subject or title"
+                  required
+                  onChange={(e) => {
+                    setSubject(e.target.value);
+                  }}
+                />
+              </InputHold>
+              <textarea
+                style={{ width: "88%", height: "100px" }}
+                placeholder="Message..."
                 required
                 onChange={(e) => {
-                  setEmail(e.target.value);
+                  setmessages(e.target.value);
                 }}
-              />
-              <input
-                type="text"
-                placeholder="Input subject or title"
-                required
-                onChange={(e) => {
-                  setSubject(e.target.value);
-                }}
-              />
-            </InputHold>
-            <textarea
-              style={{ width: "88%", height: "100px" }}
-              placeholder="Message..."
-              required
-              onChange={(e) => {
-                setmessages(e.target.value);
-              }}
-            ></textarea>
-            {!email || !subject || !messages ? (
-              <Button bg="silver" disabled style={{ cursor: "not-allowed" }}>
-                Send Message
-              </Button>
-            ) : (
-              <Button type="submit" bg="#0F3738">
-                Send Message
-              </Button>
-            )}
-          </HoldMssg>
-        </BoxHold>
-      </Container>
-    </div>
+              ></textarea>
+              {!email || !subject || !messages ? (
+                <Button bg="silver" disabled style={{ cursor: "not-allowed" }}>
+                  Send Message
+                </Button>
+              ) : (
+                <Button type="submit" bg="#0F3738">
+                  Send Message
+                </Button>
+              )}
+            </HoldMssg>
+          </BoxHold>
+        </Container>
+      </div>
+    </Fade>
   );
 };
 

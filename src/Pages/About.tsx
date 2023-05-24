@@ -7,61 +7,64 @@ import manager from "../Assets/Manager.webp";
 import anopics from "../Assets/Finbarr.jpg";
 import room from "../Assets/room.jpg";
 import AllHeros from "../Static/AllHeros";
+import { Fade } from "react-awesome-reveal";
 const About = () => {
   return (
-    <div>
-      <AllHeros title="About" />
-      <OurProject />
-      <Intresting />
-      <Container>
-        <p>
-          <h2>
-            <i>Our Team</i>
-          </h2>{" "}
-          Far far away, behind the word mountains, far from the countries
-          Vokalia and Consonantia, there live the <br /> blind texts. Separated
-          they live in
-        </p>
-        <Holder>
-          <Box>
-            <ImgHold>
-              <img src={manager} alt="" />
-            </ImgHold>
-            <h3>
-              <i>Ezewugo Chioma</i>
-            </h3>
-            <p>CEO, Chy4real furnitures</p>
-          </Box>
-          <Box>
-            <ImgHold>
-              <img src={anopics} alt="" />
-            </ImgHold>
-            <h3>
-              <i>Ogbonna Finbarr</i>
-            </h3>
-            <p>Developer, Chy4real furnitures</p>
-          </Box>
-          <Box>
-            <ImgHold>
-              <img src={room} alt="" />
-            </ImgHold>
-            <h3>
-              <i>Paul Ikenna</i>
-            </h3>
-            <p>Artisan, Chy4real furnitures</p>
-          </Box>
-          <Box>
-            <ImgHold>
-              <img src={room} alt="" />
-            </ImgHold>
-            <h3>
-              <i>Tunde Olumide</i>
-            </h3>
-            <p>Vendor,Chy4real furnitures</p>
-          </Box>
-        </Holder>
-      </Container>
-    </div>
+    <Fade cascade damping={0.1} triggerOnce>
+      <div>
+        <AllHeros title="About" />
+        <OurProject />
+        <Intresting />
+        <Container>
+          <p>
+            <h2>
+              <i>Our Team</i>
+            </h2>{" "}
+            Far far away, behind the word mountains, far from the countries
+            Vokalia and Consonantia, there live the <br /> blind texts.
+            Separated they live in
+          </p>
+          <Holder>
+            <Box>
+              <ImgHold>
+                <img src={manager} alt="" />
+              </ImgHold>
+              <h3>
+                <i>Ezewugo Chioma</i>
+              </h3>
+              <p>CEO, Chy4real furnitures</p>
+            </Box>
+            <Box>
+              <ImgHold>
+                <img src={anopics} alt="" />
+              </ImgHold>
+              <h3>
+                <i>Ogbonna Finbarr</i>
+              </h3>
+              <p>Developer, Chy4real furnitures</p>
+            </Box>
+            <Box>
+              <ImgHold>
+                <img src={room} alt="" />
+              </ImgHold>
+              <h3>
+                <i>Paul Ikenna</i>
+              </h3>
+              <p>Artisan, Chy4real furnitures</p>
+            </Box>
+            <Box>
+              <ImgHold>
+                <img src={room} alt="" />
+              </ImgHold>
+              <h3>
+                <i>Tunde Olumide</i>
+              </h3>
+              <p>Vendor,Chy4real furnitures</p>
+            </Box>
+          </Holder>
+        </Container>
+      </div>
+    </Fade>
   );
 };
 

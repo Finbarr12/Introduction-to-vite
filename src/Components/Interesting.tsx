@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Countup from "react-countup";
 const Intresting = () => {
   return (
     <Container>
@@ -11,19 +12,28 @@ const Intresting = () => {
       </Main>
       <Facts>
         <Fact>
-          <h3>18</h3>
+          <h3>
+            <Countup start={0} end={18} duration={5} />
+          </h3>
+
           <p>Years experience</p>
         </Fact>
         <Fact>
-          <h3>351</h3>
+          <h3>
+            <Countup start={-1000} end={371} duration={5} />
+          </h3>
           <p>Happy Clients</p>
         </Fact>
         <Fact>
-          <h3>150</h3>
+          <h3>
+            <Countup start={-1000} end={150} duration={5} />
+          </h3>
           <p>Finished Projects</p>
         </Fact>
         <Fact>
-          <h3>230</h3>
+          <h3>
+            <Countup start={-1000} end={230} duration={5} />
+          </h3>
           <p>Working days</p>
         </Fact>
       </Facts>

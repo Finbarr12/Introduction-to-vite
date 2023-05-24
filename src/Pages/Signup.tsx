@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import styled from "styled-components";
 import logo from "../Assets/BusinessLogo.png";
 import work from "../Assets/work.jpg";
@@ -65,102 +65,116 @@ const SignUp = () => {
         },
       });
     },
+    onError: (myData: any) => {
+      console.log("err", myData.data);
+      Swal.fire({
+        icon: "error",
+        title: "Email already exists. try again",
+        timer: 2000,
+        timerProgressBar: true,
+      });
+    },
   });
 
   const Submit = handleSubmit(async (data: any) => {
     posting.mutate(data);
   });
   return (
-    <Container>
-      <Card onSubmit={Submit}>
-        <Left bg="#19797a"></Left>
-        <Right>
-          <img src={logo} alt="" />
-          <h2>
-            <i>Create an account</i>
-          </h2>
-          <p>Please fill in the required fields...</p>
+    <Suspense fallback={<h1>Loading...</h1>}>
+      <Container>
+        <Card onSubmit={Submit}>
+          <Left bg="#19797a"></Left>
+          <Right>
+            <img src={logo} alt="" />
+            <h2>
+              <i>Create an account</i>
+            </h2>
+            <p>Please fill in the required fields...</p>
 
-          <input
-            type="text"
-            placeholder="Input your full name"
-            {...register("name")}
-          />
-          <p style={{ color: "red" }}>
-            {errors?.name && errors?.name?.message}
-          </p>
-          <input
-            type="text"
-            placeholder="Input a valid e-mail"
-            {...register("email")}
-          />
-          <p style={{ color: "red" }}>
-            {errors?.email && errors?.email?.message}
-          </p>
-          <HoldPass>
-            <Input
-              style={{
-                margin: "0",
-                outline: "none",
-                border: "none",
-                background: "transparent",
-              }}
-              type={show ? "password" : "text"}
-              placeholder="Password...."
-              {...register("password")}
+            <input
+              type="text"
+              placeholder="Input your full name"
+              {...register("name")}
             />
             <p style={{ color: "red" }}>
-              {errors?.password && errors?.password?.message}
+              {errors?.name && errors?.name?.message}
             </p>
-            {show ? (
-              <BiLockOpenAlt style={{ cursor: "pointer" }} onClick={Toggpass} />
-            ) : (
-              <BiLockAlt onClick={Toggpass} style={{ cursor: "pointer" }} />
-            )}
-          </HoldPass>
-          <HoldPass>
-            <Input
-              style={{
-                margin: "0",
-                outline: "none",
-                border: "none",
-                background: "transparent",
-              }}
-              type={show2 ? "password" : "text"}
-              placeholder="Confirm password"
-              {...register("confirmPassword")}
+            <input
+              type="text"
+              placeholder="Input a valid e-mail"
+              {...register("email")}
             />
             <p style={{ color: "red" }}>
-              {errors?.confirmPassword && errors?.confirmPassword?.message}
+              {errors?.email && errors?.email?.message}
             </p>
-            {show2 ? (
-              <BiLockOpenAlt
-                style={{ cursor: "pointer" }}
-                onClick={Toggpass2}
+            <HoldPass>
+              <Input
+                style={{
+                  margin: "0",
+                  outline: "none",
+                  border: "none",
+                  background: "transparent",
+                }}
+                type={show ? "text" : "password"}
+                placeholder="Password...."
+                {...register("password")}
               />
-            ) : (
-              <BiLockAlt onClick={Toggpass2} style={{ cursor: "pointer" }} />
-            )}
-          </HoldPass>
-          <div>
-            Already have an account?{" "}
-            <NavLink
-              to="/signinadmin"
-              style={{
-                textDecoration: "underline",
-                color: "blue",
-                height: "100%",
-              }}
-            >
-              <span>Sign in</span>
-            </NavLink>
-          </div>
-          <button type="submit" style={{ cursor: "pointer" }}>
-            Sign up
-          </button>
-        </Right>
-      </Card>
-    </Container>
+              <p style={{ color: "red" }}>
+                {errors?.password && errors?.password?.message}
+              </p>
+              {show ? (
+                <BiLockOpenAlt
+                  style={{ cursor: "pointer" }}
+                  onClick={Toggpass}
+                />
+              ) : (
+                <BiLockAlt onClick={Toggpass} style={{ cursor: "pointer" }} />
+              )}
+            </HoldPass>
+            <HoldPass>
+              <Input
+                style={{
+                  margin: "0",
+                  outline: "none",
+                  border: "none",
+                  background: "transparent",
+                }}
+                type={show2 ? "text" : "password"}
+                placeholder="Confirm password"
+                {...register("confirmPassword")}
+              />
+              <p style={{ color: "red" }}>
+                {errors?.confirmPassword && errors?.confirmPassword?.message}
+              </p>
+              {show2 ? (
+                <BiLockOpenAlt
+                  style={{ cursor: "pointer" }}
+                  onClick={Toggpass2}
+                />
+              ) : (
+                <BiLockAlt onClick={Toggpass2} style={{ cursor: "pointer" }} />
+              )}
+            </HoldPass>
+            <div>
+              Already have an account?{" "}
+              <NavLink
+                to="/signinadmin"
+                style={{
+                  textDecoration: "underline",
+                  color: "blue",
+                  height: "100%",
+                }}
+              >
+                <span>Sign in</span>
+              </NavLink>
+            </div>
+            <button type="submit" style={{ cursor: "pointer" }}>
+              Sign up
+            </button>
+          </Right>
+        </Card>
+      </Container>
+    </Suspense>
   );
 };
 
