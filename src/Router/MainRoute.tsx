@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import { lazy } from "react";
 import Layout from "../Block/Layout";
 import DahLayout from "../Block/DahLayout";
+import Loading from "../Static/Loading";
+import Products from "../Pages/Products";
+import Privateroute from "./Privateroute";
 
 const Home = lazy(() => import("../Pages/Home"));
 const About = lazy(() => import("../Pages/About"));
@@ -30,6 +33,10 @@ export const MainRoute = createBrowserRouter([
         element: <Services />,
       },
       {
+        path: "/products",
+        element: <Products />,
+      },
+      {
         path: "/contact",
         element: <Contact />,
       },
@@ -39,13 +46,18 @@ export const MainRoute = createBrowserRouter([
     path: "/signadmin",
     element: <SignUp />,
   },
+
   {
     path: "/signinadmin",
     element: <Signin />,
   },
   {
     path: "/dashboard",
-    element: <DahLayout />,
+    element: (
+      <Privateroute>
+        <DahLayout />
+      </Privateroute>
+    ),
     children: [
       {
         index: true,

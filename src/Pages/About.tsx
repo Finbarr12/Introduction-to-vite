@@ -8,22 +8,25 @@ import anopics from "../Assets/Finbarr.jpg";
 import room from "../Assets/room.jpg";
 import AllHeros from "../Static/AllHeros";
 import { Fade } from "react-awesome-reveal";
+import pics from "../assets/pics.jpg";
 const About = () => {
   return (
     <Fade cascade damping={0.1} triggerOnce>
       <div>
-        <AllHeros title="About" />
+        <AllHeros title="About" bi={`url(${pics})`} />
         <OurProject />
         <Intresting />
         <Container>
-          <p>
+          <HoldText>
             <h2>
               <i>Our Team</i>
-            </h2>{" "}
-            Far far away, behind the word mountains, far from the countries
-            Vokalia and Consonantia, there live the <br /> blind texts.
-            Separated they live in
-          </p>
+            </h2>
+            <strong>
+              We believe in collaboration and working closely with our clients.
+              Our furniture team takes the time to understand your unique
+              requirements and preferences, offering personalized solutions.
+            </strong>
+          </HoldText>
           <Holder>
             <Box>
               <ImgHold>
@@ -70,6 +73,30 @@ const About = () => {
 
 export default About;
 
+const HoldText = styled.div`
+  @media screen and (max-width: 900px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  h2 {
+    @media screen and (max-width: 900px) {
+      font-size: 36px;
+      margin: 0;
+    }
+  }
+  strong {
+    font-weight: lighter;
+    @media screen and (max-width: 900px) {
+      font-size: 15px;
+      text-align: center;
+      width: 90%;
+    }
+  }
+`;
+
 const ImgHold = styled.div`
   width: 100%;
   height: 70%;
@@ -109,16 +136,20 @@ const Holder = styled.div`
   grid-template-rows: repeat(4, 350px);
   gap: 17px;
   margin-top: 20px;
+
+  @media screen and (max-width: 900px) {
+    grid-template-rows: repeat(4, 290px);
+    grid-template-columns: none;
+    gap: 1px;
+    /* margin: 0; */
+    /* margin-top: 10px; */
+    margin-top: 30px;
+    margin-bottom: 800px;
+  }
 `;
 
 const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-
-  h2 {
-    font-size: 40px;
-    margin: 0;
-    margin-top: 40px;
-  }
 `;

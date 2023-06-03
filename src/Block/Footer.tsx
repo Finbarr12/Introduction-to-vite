@@ -7,14 +7,17 @@ import { GrInstagram } from "react-icons/gr";
 import { HiLocationMarker } from "react-icons/hi";
 import { IoCallOutline } from "react-icons/io5";
 import { GoMail } from "react-icons/go";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <Container>
       <Left>
         <img src={logo} alt="" />
         <p>
-          Far far away, behind the word mountains, far <br /> from the countries
-          Vokalia and Consonantia, <br /> there live the blind texts.
+          Stay connected with Chy4real Furnitures <br /> through our vibrant
+          social media platforms! <br />
+          Follow us to embark on a journey of design inspiration, <br /> home
+          décor trends, and exclusive offers.
         </p>
         <Holded>
           <Circle>
@@ -31,19 +34,39 @@ const Footer = () => {
       <Right>
         <Held>
           <h3>Links</h3>
-          <div>Home</div>
-          <p>About</p>
-          <p>Services</p>
-          <p>Contact</p>
+          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+            <div>Home</div>
+          </Link>
+          <Link to="about" style={{ color: "white", textDecoration: "none" }}>
+            <p>About</p>
+          </Link>
+          <Link
+            to="services"
+            style={{ color: "white", textDecoration: "none" }}
+          >
+            <p>Services</p>
+          </Link>
+          <Link
+            to="/products"
+            style={{ color: "white", textDecoration: "none" }}
+          >
+            <p>Products</p>
+          </Link>
+          <Link
+            to="/contact"
+            style={{ color: "white", textDecoration: "none" }}
+          >
+            <p>Contact</p>
+          </Link>
         </Held>
-        <Held>
+        <Held2>
           <h3>Have a question?</h3>
           <Main>
             <HiLocationMarker />
-            <p>
-              Suit 211, floor2, Fedan Plaza opp Total Filling station <br /> Ojo
-              Alaba International Market road, Lagos
-            </p>
+            <strong>
+              Suit 211, floor2, Fedan Plaza opp Total Filling station Ojo Alaba
+              International Market road, Lagos
+            </strong>
           </Main>
           <Main>
             <IoCallOutline />
@@ -53,7 +76,7 @@ const Footer = () => {
             <GoMail />
             <p>chy4real1982@gmail.com</p>
           </Main>
-        </Held>
+        </Held2>
       </Right>
     </Container>
   );
@@ -61,12 +84,46 @@ const Footer = () => {
 
 export default Footer;
 
+const Held2 = styled.div`
+  color: white;
+  margin-right: 150px;
+
+  @media screen and (max-width: 500px) {
+    margin-left: 30px;
+  }
+
+  div {
+    margin-top: 40px;
+  }
+
+  p {
+    @media screen and (max-width: 900px) {
+      font-size: 15px;
+    }
+  }
+
+  h3 {
+    @media screen and (max-width: 900px) {
+      font-size: 20px;
+    }
+  }
+`;
+
 const Main = styled.p`
   display: flex;
   align-items: center;
   margin: 0;
   p {
     margin-left: 10px;
+  }
+
+  strong {
+    font-weight: lighter;
+    @media screen and (max-width: 900px) {
+      width: 80%;
+      font-size: 14px;
+      margin-left: 10px;
+    }
   }
 `;
 
@@ -77,12 +134,23 @@ const Held = styled.div`
   div {
     margin-top: 40px;
   }
+
+  @media screen and (max-width: 500px) {
+    margin: 10px;
+    margin-left: 30px;
+  }
 `;
 
 const Right = styled.div`
   margin-top: 80px;
   margin-left: 150px;
   display: flex;
+
+  @media screen and (max-width: 500px) {
+    margin: 0;
+    display: flex;
+    margin-top: 20px;
+  }
 `;
 
 const Holded = styled.div`
@@ -118,4 +186,9 @@ const Container = styled.div`
   background-color: black;
   display: flex;
   margin-top: 50px;
+
+  @media screen and (max-width: 500px) {
+    display: block;
+    height: 600px;
+  }
 `;

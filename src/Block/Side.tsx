@@ -119,6 +119,10 @@ const Container = styled.div`
   position: sticky;
   top: 0%;
 
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+
   img {
     height: 70px;
     margin-left: 15px;

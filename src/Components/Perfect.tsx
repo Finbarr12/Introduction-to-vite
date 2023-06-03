@@ -15,21 +15,25 @@ const Perfect = () => {
           </h1>
         </Held>
         <p>
-          On her way she met a copy. The copy warned the Little Blind Text, that
-          where it came from it would have been rewritten a thousand times and
-          everything that was left from its origin would be the word "and" and
-          the Little Blind Text should turn around and return to its own, safe
-          country. But nothing the copy said could convince her and so it didn’t
-          take long until a few insidious Copy Writers ambushed her, made her
-          drunk with Longe and Parole and dragged her into their agency, where
-          they abused her for their.
+          At Chy4real Furnitures, we believe in providing a seamless and
+          delightful shopping experience. Our knowledgeable and friendly staff
+          are always ready to assist you, whether you need guidance in choosing
+          the right furniture or require after-sales support. We strive to
+          exceed your expectations and make your furniture shopping journey
+          enjoyable.We understand that furniture is not just about
+          functionality; it's also a reflection of your personal style. That's
+          why we offer a diverse collection of furniture designs to cater to
+          various aesthetics. Whether you prefer modern and minimalistic or
+          classic and ornate, we have furniture that will complement your space
+          perfectly.
         </p>
         <p>
-          When she reached the first hills of the Italic Mountains, she had a
-          last view back on the skyline of her hometown Bookmarksgrove, the
-          headline of Alphabet Village and the subline of her own road, the Line
-          Lane. Pityful a rethoric question ran over her cheek, then she
-          continued her way.
+          Enjoy affordable luxury with Chy4real Furnitures. Our competitively
+          priced collection allows you to bring high-quality furniture into your
+          home without breaking the bank. Experience the perfect blend of
+          comfort and aesthetics with our ergonomically designed furniture. From
+          cozy sofas to ergonomic office chairs, we prioritize your comfort
+          without compromising on style.
         </p>
         <button>Shop with us</button>
       </Second>
@@ -49,15 +53,30 @@ const Second = styled.div`
   width: 700px;
   /* background-color: red; */
 
+  @media screen and (max-width: 900px) {
+    width: 90%;
+    margin: 0;
+  }
+
   p {
     margin-right: 70px;
     color: darkgray;
+
+    @media screen and (max-width: 900px) {
+      margin: 0;
+      line-height: 1.5rem;
+      margin-top: 10px;
+    }
   }
   h4 {
     margin: 0;
     color: #c5c5c5;
     margin-bottom: 5px;
     margin-left: 70px;
+    @media screen and (max-width: 900px) {
+      margin: 0;
+      margin-bottom: 10px;
+    }
   }
 
   h1 {
@@ -65,6 +84,11 @@ const Second = styled.div`
     font-size: 30px;
     margin-left: 70px;
     margin-bottom: 15px;
+
+    @media screen and (max-width: 900px) {
+      margin: 0;
+      margin-bottom: 10px;
+    }
   }
 
   button {
@@ -81,6 +105,9 @@ const Second = styled.div`
     :hover {
       transform: scale(0.99);
     }
+    @media screen and (max-width: 900px) {
+      margin-top: 20px;
+    }
   }
 `;
 
@@ -90,6 +117,12 @@ const Container = styled.div`
   flex-direction: row-reverse;
   /* justify-content: space-between; */
   margin-top: 100px;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const Image = styled.div`
@@ -97,6 +130,13 @@ const Image = styled.div`
   height: 450px;
   margin-right: 40px;
   overflow: hidden;
+
+  @media screen and (max-width: 900px) {
+    width: 90%;
+    height: 300px;
+    margin: 0;
+    margin-top: 20px;
+  }
 
   img {
     width: 100%;

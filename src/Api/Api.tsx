@@ -8,7 +8,7 @@ export const RegisterAdmin = async ({
   confirmPassword,
 }: any) => {
   await axios
-    .post("http://localhost:1112/api/adminsignup", {
+    .post("https://realfurniture.onrender.com/api/adminsignup", {
       name,
       password,
       email,
@@ -30,7 +30,7 @@ export const RegisterAdmin = async ({
 
 export const loginAdmin = async ({ email, password }: any) => {
   return axios
-    .post("http://localhost:1112/api/adminsignin", {
+    .post("https://realfurniture.onrender.com/api/adminsignin", {
       email,
       password,
     })
@@ -39,15 +39,15 @@ export const loginAdmin = async ({ email, password }: any) => {
     });
 };
 
-export const AllProduct: any = async () => {
-  await axios.get("http://localhost:1112/api/products").then((res) => {
-    // return res.data;
-    console.log("this is data", res.data);
-  });
-};
+// export const AllProduct: any = async () => {
+//   await axios.get("http://localhost:1112/api/products").then((res) => {
+//     // return res.data;
+//     console.log("this is data", res.data);
+//   });
+// };
 
-export const DeletePro = async (id: any) => {
-  await axios.get(`http://localhost:1112/api/delete/${id}`).then((res) => {
-    return res.data;
-  });
-};
+// export const DeletePro = async (id: any) => {
+//   await axios.get(`http://localhost:1112/api/delete/${id}`).then((res) => {
+//     return res.data;
+//   });
+// };

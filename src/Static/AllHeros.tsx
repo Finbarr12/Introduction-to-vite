@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import heroimg from "../Assets/home.jpg";
+// import heroimg from "../Assets/home.jpg";
 
 interface IProps {
   title?: string;
+  bi: string;
 }
 
-const AllHeros: React.FC<IProps> = ({ title }) => {
+const AllHeros: React.FC<IProps> = ({ title, bi }) => {
   return (
-    <Container>
+    <Container bi={bi}>
       <Wrapper>
         <i>{title}</i>
       </Wrapper>
@@ -28,10 +29,10 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-const Container = styled.div`
+const Container = styled.div<{ bi: string }>`
   width: 100%;
   height: 500px;
-  background-image: url(${heroimg});
+  background-image: ${({ bi }) => bi};
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -42,6 +43,10 @@ const Container = styled.div`
   flex-direction: column;
 
   position: relative;
+
+  @media screen and (max-width: 960px) {
+    height: 300px;
+  }
 
   i {
     /* margin: 0; */

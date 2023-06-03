@@ -3,12 +3,13 @@ import styled from "styled-components";
 import table from "../Assets/table2.jpg";
 import AllHeros from "../Static/AllHeros";
 import { Fade } from "react-awesome-reveal";
+import pics from "../assets/room.jpg";
 
 const Services = () => {
   return (
     <Fade cascade damping={0.1} triggerOnce>
       <div>
-        <AllHeros title="Services" />
+        <AllHeros title="Services" bi={`url(${pics})`} />
         <Container>
           <Image>
             <img src={table} alt="" />
@@ -58,15 +59,33 @@ const Second = styled.div`
   width: 700px;
   /* background-color: red; */
 
+  @media screen and (max-width: 900px) {
+    width: 90%;
+    /* height: 300px; */
+    margin: 0;
+  }
+
   p {
     margin-left: 70px;
     color: #c5c5c5;
+
+    @media screen and (max-width: 900px) {
+      margin: 0;
+      line-height: 1.5rem;
+      margin-top: 10px;
+    }
   }
   h4 {
     margin: 0;
     color: #c5c5c5;
     margin-bottom: 5px;
     margin-left: 70px;
+
+    @media screen and (max-width: 900px) {
+      margin: 0;
+      margin-bottom: 5px;
+      margin-top: 20px;
+    }
   }
 
   h1 {
@@ -74,6 +93,13 @@ const Second = styled.div`
     font-size: 30px;
     margin-left: 70px;
     margin-bottom: 15px;
+
+    @media screen and (max-width: 900px) {
+      margin: 0%;
+      width: 90%;
+      font-size: 29px;
+      margin-bottom: 10px;
+    }
   }
 
   button {
@@ -90,6 +116,11 @@ const Second = styled.div`
     :hover {
       transform: scale(0.99);
     }
+
+    @media screen and (max-width: 900px) {
+      margin: 0;
+      margin-top: 20px;
+    }
   }
 `;
 
@@ -99,6 +130,11 @@ const Container = styled.div`
 
   /* justify-content: space-between; */
   margin-top: 100px;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Image = styled.div`
@@ -106,6 +142,12 @@ const Image = styled.div`
   height: 450px;
   margin-left: 40px;
   overflow: hidden;
+
+  @media screen and (max-width: 900px) {
+    width: 90%;
+    height: 300px;
+    margin: 0;
+  }
 
   img {
     width: 100%;

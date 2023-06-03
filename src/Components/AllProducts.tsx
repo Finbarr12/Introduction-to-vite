@@ -4,14 +4,14 @@ import pix from "../Assets/chiairbg.png";
 import pics from "../assets/table2.jpg";
 import { useAppSelector } from "../Global/Store";
 const AllProducts = () => {
-  const Product = useAppSelector((State) => State.allProducts);
+  // const Product = useAppSelector((State) => State.allProducts);
   return (
     <Container>
       <h2>
         <i>Top Products</i>
       </h2>
       <Holders>
-        <Products>
+        {/* <Products>
           {Product?.map((props: any) => (
             <Holder key={props?._id}>
               <Boximg>
@@ -21,7 +21,7 @@ const AllProducts = () => {
               <button>Delete</button>
             </Holder>
           ))}
-        </Products>
+        </Products> */}
       </Holders>
     </Container>
   );

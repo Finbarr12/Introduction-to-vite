@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import pics from "../assets/table2.jpg";
-import { AllProduct } from "../Api/Api";
+// import { AllProduct } from "../Api/Api";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -19,19 +19,20 @@ const DashHome = () => {
   //   console.log(`this is tantack`, Products);
 
   useEffect(() => {
-    axios.get("http://localhost:1112/api/products").then((res) => {
+    axios.get("https://realfurniture.onrender.com/api/products").then((res) => {
       SetData(res.data.data);
       dispatch(allProducts(res.data.data));
     });
-  }, []);
+  }, [data]);
 
   const DeletePro = async (_id: any) => {
     await axios
-      .delete(`http://localhost:1112/api/delete/${_id}`)
+      .delete(`https://realfurniture.onrender.com/api/delete/${_id}`)
       .then((res) => {
         return res.data;
       });
   };
+
   return (
     <Container>
       <h2>
@@ -44,6 +45,10 @@ const DashHome = () => {
               <img src={props?.Image} alt="" />
             </Boximg>
             <h4>{props?.name}</h4>
+            <span>Category : {props?.Category}</span>
+
+            <pre>{props?.desc}</pre>
+
             <button
               onClick={() => {
                 Swal.fire({
@@ -112,6 +117,7 @@ const Boximg = styled.div`
 `;
 const Holder = styled.div`
   margin-left: 30px;
+  /* background-color: red; */
 
   button {
     width: 80px;
@@ -123,6 +129,19 @@ const Holder = styled.div`
     margin-top: 7px;
     margin-bottom: 20px;
     cursor: pointer;
+  }
+
+  pre {
+    margin: 0;
+    margin-top: 5px;
+    width: 80%;
+  }
+
+  span {
+    color: #113738;
+    font-size: 20px;
+    margin-top: 6px;
+    font-weight: 700;
   }
 `;
 

@@ -11,9 +11,11 @@ const MainProducts = () => {
         <h1>
           <i>Our Projects</i>
         </h1>
-        A small river named Duden flows by their place and supplies it with the
-        necessary regelialia. It is a <br /> paradisematic country, in which
-        roasted parts of sentences
+        <strong>
+          At Chy4real Furnitures, we take pride in our diverse portfolio of
+          projects that showcase our expertise, innovation, and commitment to
+          excellence.
+        </strong>
       </p>
 
       <Holder>
@@ -58,6 +60,13 @@ const Holder = styled.div`
   /* background-color: gold; */
 
   margin-top: 80px;
+
+  @media screen and (max-width: 900px) {
+    margin-top: 19px;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: none;
+    height: 700px;
+  }
 `;
 
 const Container = styled.div`
@@ -67,11 +76,31 @@ const Container = styled.div`
   flex-direction: column;
   margin-top: 130px;
 
+  @media screen and (max-width: 900px) {
+    margin-top: 20px;
+  }
+
   h1 {
     margin: 0;
     font-size: 28px;
   }
   p {
     margin: 0;
+
+    strong {
+      font-weight: lighter;
+      width: 90%;
+
+      @media screen and (max-width: 900px) {
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+    @media screen and (max-width: 900px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 `;

@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <Fade cascade damping={0.1} triggerOnce>
+      <Fade triggerOnce>
         <Render />
         <AllProducts />
         <OurProject />

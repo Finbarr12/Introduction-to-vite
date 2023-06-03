@@ -6,15 +6,19 @@ import axios from "axios";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { Fade } from "react-awesome-reveal";
+import pics from "../assets/work.jpg";
+import Loading from "../Static/Loading";
 const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [messages, setmessages] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const SendMail = async (e: any) => {
     e.preventDefault();
+    setLoading(true);
     await axios
-      .post("http://localhost:1112/api/mailer", {
+      .post("https://realfurniture.onrender.com/api/mailer", {
         email,
         subject,
         messages,
@@ -37,12 +41,13 @@ const Contact = () => {
         });
         return res.data;
       });
+    setLoading(false);
   };
 
   return (
     <Fade cascade damping={0.1} triggerOnce>
       <div>
-        <AllHeros title="Contact" />
+        <AllHeros title="Contact" bi={`url(${pics})`} />
         <Container>
           <h3>Contact Information</h3>
           <AddressHold>
@@ -95,6 +100,10 @@ const Contact = () => {
                 <Button bg="silver" disabled style={{ cursor: "not-allowed" }}>
                   Send Message
                 </Button>
+              ) : loading ? (
+                <Button bg="#435555">
+                  <Loading />
+                </Button>
               ) : (
                 <Button type="submit" bg="#0F3738">
                   Send Message
@@ -130,6 +139,10 @@ const InputHold = styled.div`
   display: flex;
   justify-content: space-between;
 
+  @media screen and (max-width: 900px) {
+    display: block;
+  }
+
   input {
     width: 45%;
     height: 100%;
@@ -137,6 +150,11 @@ const InputHold = styled.div`
     border: none;
     border: 1px solid silver;
     padding-left: 12px;
+
+    @media screen and (max-width: 900px) {
+      width: 95%;
+      margin-bottom: 15px;
+    }
   }
 `;
 
@@ -162,12 +180,21 @@ const HoldMssg = styled.form`
   align-items: center;
   flex-direction: column;
 
+  @media screen and (max-width: 900px) {
+    width: 95%;
+    height: 80%;
+  }
+
   textarea {
     resize: none;
     margin-top: 30px;
     outline: none;
     padding-left: 12px;
     border: 1px solid silver;
+
+    @media screen and (max-width: 900px) {
+      margin-top: 80px;
+    }
   }
 `;
 
@@ -183,6 +210,10 @@ const BoxHold = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }
 
   ::before {
     content: "";
@@ -219,5 +250,9 @@ const AddressHold = styled.div`
     margin-right: 30px;
     font-size: 18px;
     margin-left: 15px;
+  }
+
+  @media screen and (max-width: 900px) {
+    display: block;
   }
 `;

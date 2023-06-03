@@ -28,6 +28,19 @@ const Header = () => {
           <Navs>Home</Navs>
         </NavLink>
         <NavLink
+          to="/products"
+          style={({ isActive }) => {
+            return {
+              background: isActive ? "#0F3738" : "",
+              textDecoration: "none",
+              color: isActive ? "white" : "",
+              height: "60%",
+            };
+          }}
+        >
+          <Navs>Products</Navs>
+        </NavLink>
+        <NavLink
           to="/about"
           style={({ isActive }) => {
             return {
@@ -71,7 +84,45 @@ const Header = () => {
       <IconHold onClick={Toggle}>
         <AiOutlineMenu />
       </IconHold>
-      {show ? <Dropdwn></Dropdwn> : null}
+      {show ? (
+        <Dropdwn>
+          <NavLink
+            to="/"
+            onClick={Toggle}
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            <p>Home</p>
+          </NavLink>
+          <NavLink
+            to="/products"
+            onClick={Toggle}
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            <p>Products</p>
+          </NavLink>
+          <NavLink
+            to="/about"
+            onClick={Toggle}
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            <p>About</p>
+          </NavLink>
+          <NavLink
+            to="/services"
+            onClick={Toggle}
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            <p>Services</p>
+          </NavLink>
+          <NavLink
+            to="/contact"
+            onClick={Toggle}
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            <p>Contact</p>
+          </NavLink>
+        </Dropdwn>
+      ) : null}
     </Container>
   );
 };
@@ -111,10 +162,20 @@ const Navs = styled.div`
 
 const Dropdwn = styled.div`
   width: 100%;
-  height: 450px;
+  height: 235px;
   background-color: white;
   position: absolute;
-  top: 102%;
+  top: 100%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  p {
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const IconHold = styled.div`
@@ -135,7 +196,7 @@ const Container = styled.div`
   justify-content: space-between;
   z-index: 2;
   position: sticky;
-  top: 0%;
+  top: 0px;
   box-shadow: rgba(141, 136, 136, 0.24) 0px 3px 8px;
   z-index: 45;
   img {

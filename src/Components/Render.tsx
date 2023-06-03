@@ -56,9 +56,8 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: 425px) {
-    height: 100px;
-    margin: 0;
+  @media screen and (max-width: 900px) {
+    display: none;
   }
 `;
 

@@ -2,20 +2,30 @@ import React from "react";
 import styled from "styled-components";
 import heroimg from "../Assets/home.jpg";
 import { Fade } from "react-awesome-reveal";
+import { NavLink } from "react-router-dom";
 
 const Hero = () => {
   return (
     <Container>
       <Wrapper>
-        <Fade cascade damping={0.1} triggerOnce>
+        <Fade
+          triggerOnce
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <i>The Furniture That Defines You</i>
 
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate{" "}
-            <br />
-            inventore porro illum incidunt nostrum iure, magni ab.
+            Each meticulously crafted piece tells a story of artistry, quality,
+            and sophistication. From luxurious sofas that envelop you in comfort
+            to exquisite dining sets that invite memorable gatherings, our
+            furniture transforms spaces into havens of style and refinement.
           </p>
-          <Button>Purchase</Button>
+          <Button to="/products">Purchase</Button>
         </Fade>
       </Wrapper>
     </Container>
@@ -65,19 +75,26 @@ const Container = styled.div`
     @media screen and (min-width: 600px) and (max-width: 960px) {
       font-size: 58px;
       text-align: center;
+      width: 80%;
     }
   }
   p {
     color: white;
     text-align: center;
+    width: 60%;
 
     @media screen and (max-width: 425px) {
       font-size: 12px;
+      width: 80%;
+    }
+    @media screen and (min-width: 600px) and (max-width: 960px) {
+      font-size: 15px;
+      width: 80%;
     }
   }
 `;
 
-const Button = styled.button`
+const Button = styled(NavLink)`
   width: 150px;
   height: 37px;
   border: none;
@@ -86,6 +103,10 @@ const Button = styled.button`
   cursor: pointer;
   color: white;
   border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   :hover {
     transform: scale(0.99);

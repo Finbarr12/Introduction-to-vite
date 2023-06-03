@@ -304,4 +304,9 @@ const Card = styled.form`
   grid-template-rows: repeat(2, 500px);
   border-radius: 20px;
   box-shadow: rgba(90, 88, 88, 0.24) 0px 3px 8px;
+
+  @media screen and (max-width: 500px) {
+    height: 1000px;
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;

@@ -6,9 +6,7 @@ const Intresting = () => {
     <Container>
       <Main>
         <h4>SOME</h4>
-        <h2>
-          Interesting <br /> Facts
-        </h2>
+        <h2>Interesting Facts</h2>
       </Main>
       <Facts>
         <Fact>
@@ -56,11 +54,19 @@ const Fact = styled.div`
     margin: 0;
     font-size: 18px;
     color: #c5c5c5;
+
+    @media screen and (max-width: 900px) {
+      font-size: 15px;
+    }
   }
 
   h3 {
     margin: 0;
     font-size: 45px;
+
+    @media screen and (max-width: 900px) {
+      font-size: 29px;
+    }
   }
 `;
 
@@ -70,18 +76,38 @@ const Facts = styled.div`
   width: 800px;
   height: 200px;
   margin-left: 90px;
+
+  @media screen and (max-width: 500px) {
+    margin: 0;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin-top: 25px;
+  }
+  @media screen and (min-width: 600px) and (max-width: 1000px) {
+    margin-left: 0;
+  }
 `;
 
 const Main = styled.div`
   h4 {
     margin: 0;
     color: #c5c5c5;
+
+    @media screen and (max-width: 900px) {
+      margin: 0;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
   }
 
   h2 {
     margin: 0;
     font-size: 40px;
     font-family: Inria serif;
+
+    @media screen and (max-width: 900px) {
+      font-size: 24px;
+    }
   }
 `;
 
@@ -94,4 +120,10 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    margin-top: 20px;
+    height: 300px;
+  }
 `;

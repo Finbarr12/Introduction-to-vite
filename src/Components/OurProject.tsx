@@ -12,27 +12,24 @@ const OurProject = () => {
         <h4>ABOUT</h4>
         <Held>
           <h1>
-            <i>
-              We are the best interior Furniture <br /> designs in Nigeria
-            </i>
+            <i>We are the best interior Furniture designs in Nigeria</i>
           </h1>
         </Held>
         <p>
-          On her way she met a copy. The copy warned the Little Blind Text, that
-          where it came from it would have been rewritten a thousand times and
-          everything that was left from its origin would be the word "and" and
-          the Little Blind Text should turn around and return to its own, safe
-          country. But nothing the copy said could convince her and so it didn’t
-          take long until a few insidious Copy Writers ambushed her, made her
-          drunk with Longe and Parole and dragged her into their agency, where
-          they abused her for their.
+          At Chy4real Furnitures, we pride ourselves on providing high-quality
+          and stylish furniture pieces that enhance the beauty and functionality
+          of your space. Our furniture is meticulously crafted to meet the
+          highest standards of design and durability. Whether you're furnishing
+          your home, office, or any other commercial space, we have a wide range
+          of options to suit your taste and requirements.
         </p>
         <p>
-          When she reached the first hills of the Italic Mountains, she had a
-          last view back on the skyline of her hometown Bookmarksgrove, the
-          headline of Alphabet Village and the subline of her own road, the Line
-          Lane. Pityful a rethoric question ran over her cheek, then she
-          continued her way.
+          Discover our exquisite collection of furniture that combines elegance,
+          functionality, and exceptional craftsmanship. Upgrade your space with
+          our stylish and durable pieces.we take pride in our meticulous
+          attention to detail and commitment to quality. Each furniture piece is
+          thoughtfully crafted to ensure superior design and long-lasting
+          durability.
         </p>
         <button>Shop with us</button>
       </Second>
@@ -52,15 +49,32 @@ const Second = styled.div`
   width: 700px;
   /* background-color: red; */
 
+  @media screen and (max-width: 900px) {
+    width: 90%;
+    /* height: 300px; */
+    margin: 0;
+  }
+
   p {
     margin-left: 70px;
     color: darkgray;
+    @media screen and (max-width: 900px) {
+      margin: 0;
+      line-height: 1.5rem;
+      margin-top: 10px;
+    }
   }
   h4 {
     margin: 0;
     color: #c5c5c5;
     margin-bottom: 5px;
     margin-left: 70px;
+
+    @media screen and (max-width: 900px) {
+      margin: 0;
+      margin-bottom: 5px;
+      margin-top: 20px;
+    }
   }
 
   h1 {
@@ -68,6 +82,14 @@ const Second = styled.div`
     font-size: 30px;
     margin-left: 70px;
     margin-bottom: 15px;
+    width: 70%;
+
+    @media screen and (max-width: 900px) {
+      margin: 0%;
+      width: 90%;
+      font-size: 29px;
+      margin-bottom: 10px;
+    }
   }
 
   button {
@@ -84,6 +106,11 @@ const Second = styled.div`
     :hover {
       transform: scale(0.99);
     }
+
+    @media screen and (max-width: 900px) {
+      margin: 0;
+      margin-top: 20px;
+    }
   }
 `;
 
@@ -93,6 +120,11 @@ const Container = styled.div`
 
   /* justify-content: space-between; */
   margin-top: 100px;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Image = styled.div`
@@ -100,6 +132,12 @@ const Image = styled.div`
   height: 450px;
   margin-left: 40px;
   overflow: hidden;
+
+  @media screen and (max-width: 900px) {
+    width: 90%;
+    height: 300px;
+    margin: 0;
+  }
 
   img {
     width: 100%;
