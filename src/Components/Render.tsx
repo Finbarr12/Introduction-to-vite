@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { AiOutlineGift } from "react-icons/ai";
@@ -38,15 +37,6 @@ const Render = () => {
 };
 
 export default Render;
-
-const Hold = styled.div`
-  font-size: 80px;
-  color: #946c38;
-
-  @media screen and (max-width: 425px) {
-    font-size: 5px;
-  }
-`;
 
 const Container = styled.div`
   width: 100%;

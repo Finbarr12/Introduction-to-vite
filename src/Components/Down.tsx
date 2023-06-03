@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
-import pics from "../assets/living.jpg";
+
 import { useAppSelector } from "../Global/Store";
 import { FaWhatsapp } from "react-icons/fa";
 

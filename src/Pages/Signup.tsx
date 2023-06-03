@@ -41,7 +41,7 @@ const SignUp = () => {
   const {
     handleSubmit,
     formState: { errors },
-    reset,
+
     register,
   } = useForm<formData>({
     resolver: yupResolver(userSchema),
@@ -201,12 +201,6 @@ const HoldPass = styled.div`
   }
 `;
 
-const Wrap = styled.div`
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-`;
 const Right = styled.div`
   background-color: white;
   display: flex;

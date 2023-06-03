@@ -1,4 +1,3 @@
-import React from "react";
 import Side from "./Side";
 import DashHeader from "./DashHeader";
 import { Outlet } from "react-router-dom";

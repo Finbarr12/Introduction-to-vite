@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import logo from "../Assets/BusinessLogo.png";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -129,27 +129,6 @@ const Header = () => {
 
 export default Header;
 
-const Button = styled(NavLink)`
-  text-decoration: none;
-  color: white;
-  width: 110px;
-  height: 35px;
-  border: none;
-  background-color: #0f3738;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-left: 15px;
-  font-size: 15px;
-  cursor: pointer;
-  border-radius: 5px;
-  color: white;
-  :hover {
-    transform: scale(0.99);
-  }
-`;
-
 const Navs = styled.div`
   text-decoration: none;
   /* color: black; */
@@ -214,13 +193,5 @@ const Holder = styled.div`
   }
   p {
     margin: 15px;
-  }
-`;
-
-const ButHold = styled.div`
-  display: flex;
-  margin-right: 29px;
-  @media screen and (max-width: 960px) {
-    display: none;
   }
 `;

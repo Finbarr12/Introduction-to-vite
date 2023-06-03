@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import logo from "../assets/chyrealrm.png";
 import { AiOutlineHome, AiOutlineCloudUpload } from "react-icons/ai";
