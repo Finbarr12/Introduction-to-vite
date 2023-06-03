@@ -20,9 +20,12 @@ const Footer = () => {
           décor trends, and exclusive offers.
         </p>
         <Holded>
-          <Circle>
-            <RiFacebookFill style={{ color: "white", fontSize: "24px" }} />
-          </Circle>
+          <a href=" https://web.facebook.com/blessed.chyezeh">
+            <Circle>
+              <RiFacebookFill style={{ color: "white", fontSize: "24px" }} />
+            </Circle>
+          </a>
+
           <Circle>
             <FaTiktok style={{ color: "white", fontSize: "24px" }} />
           </Circle>

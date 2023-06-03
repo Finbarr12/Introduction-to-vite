@@ -2,14 +2,15 @@ import { createBrowserRouter } from "react-router-dom";
 import { lazy } from "react";
 import Layout from "../Block/Layout";
 import DahLayout from "../Block/DahLayout";
-import Loading from "../Static/Loading";
-import Products from "../Pages/Products";
+// import Loading from "../Static/Loading";
+// import Products from "../Pages/Products";
 import Privateroute from "./Privateroute";
 
 const Home = lazy(() => import("../Pages/Home"));
 const About = lazy(() => import("../Pages/About"));
 const Services = lazy(() => import("../Pages/Services"));
 const Contact = lazy(() => import("../Pages/Contact"));
+const Products = lazy(() => import("../Pages/Products"));
 const SignUp = lazy(() => import("../Pages/Signup"));
 const Signin = lazy(() => import("../Pages/Signin"));
 const DashHome = lazy(() => import("../Pages/DashHome"));
