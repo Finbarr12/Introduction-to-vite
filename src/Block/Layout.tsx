@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
@@ -6,7 +5,6 @@ import { useEffect, useState } from "react";
 
 const Layout = () => {
   const [isOffline, setIsOffline] = useState(!navigator.onLine);
-  const [showBackOnline, setShowBackOnline] = useState(false);
 
   useEffect(() => {
     const handleOffline = () => setIsOffline(true);

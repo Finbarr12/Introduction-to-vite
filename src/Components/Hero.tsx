@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import heroimg from "../Assets/home.jpg";
 import { Fade } from "react-awesome-reveal";

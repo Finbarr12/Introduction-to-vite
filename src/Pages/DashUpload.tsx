@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { BsImageFill } from "react-icons/bs";
 import axios from "axios";

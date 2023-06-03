@@ -1,6 +1,5 @@
-import React from "react";
 import styled from "styled-components";
-import Footer from "../Block/Footer";
+
 import Intresting from "../Components/Interesting";
 import OurProject from "../Components/OurProject";
 import manager from "../Assets/Manager.webp";

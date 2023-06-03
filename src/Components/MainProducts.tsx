@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import pics from "../Assets/pics.jpg";
 import table from "../Assets/table.jpg";

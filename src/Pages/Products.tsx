@@ -1,4 +1,3 @@
-import React from "react";
 import AllHeros from "../Static/AllHeros";
 import pics from "../assets/best.jpg";
 import Down from "../Components/Down";

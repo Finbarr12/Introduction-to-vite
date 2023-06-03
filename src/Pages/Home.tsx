@@ -1,4 +1,3 @@
-import React, { Suspense } from "react";
 import Hero from "../Components/Hero";
 import Render from "../Components/Render";
 import AllProducts from "../Components/AllProducts";

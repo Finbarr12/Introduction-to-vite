@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import pics from "../assets/table2.jpg";
-// import { AllProduct } from "../Api/Api";
-import { useQuery } from "@tanstack/react-query";
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
