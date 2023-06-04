@@ -9,6 +9,7 @@ const Hero = () => {
       <Wrapper>
         <Fade
           triggerOnce
+          delay={1000}
           style={{
             display: "flex",
             flexDirection: "column",

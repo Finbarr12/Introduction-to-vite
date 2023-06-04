@@ -11,11 +11,13 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <Fade triggerOnce>
-        <Render />
-        <AllProducts />
+      <Render />
+      <AllProducts />
+      <Fade triggerOnce delay={1000}>
         <OurProject />
-        <Intresting />
+      </Fade>
+      <Intresting />
+      <Fade triggerOnce delay={1000}>
         <MainProducts />
         <Perfect />
       </Fade>

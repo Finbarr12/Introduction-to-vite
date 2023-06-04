@@ -2,48 +2,52 @@ import Perfect from "../Components/Perfect";
 import styled from "styled-components";
 import table from "../Assets/table2.jpg";
 import AllHeros from "../Static/AllHeros";
-import { Fade } from "react-awesome-reveal";
 import pics from "../assets/room.jpg";
+import { NavLink } from "react-router-dom";
 
 const Services = () => {
   return (
-    <Fade cascade damping={0.1} triggerOnce>
-      <div>
-        <AllHeros title="Services" bi={`url(${pics})`} />
-        <Container>
-          <Image>
-            <img src={table} alt="" />
-          </Image>
-          <Second>
-            <h4>SERVICES</h4>
-            <Held>
-              <h1>
-                <i>We Carefully Planned</i>
-              </h1>
-            </Held>
-            <p>
-              On her way she met a copy. The copy warned the Little Blind Text,
-              that where it came from it would have been rewritten a thousand
-              times and everything that was left from its origin would be the
-              word "and" and the Little Blind Text should turn around and return
-              to its own, safe country. But nothing the copy said could convince
-              her and so it didn’t take long until a few insidious Copy Writers
-              ambushed her, made her drunk with Longe and Parole and dragged her
-              into their agency, where they abused her for their.
-            </p>
-            <p>
-              When she reached the first hills of the Italic Mountains, she had
-              a last view back on the skyline of her hometown Bookmarksgrove,
-              the headline of Alphabet Village and the subline of her own road,
-              the Line Lane. Pityful a rethoric question ran over her cheek,
-              then she continued her way.
-            </p>
+    <div>
+      <AllHeros title="Services" bi={`url(${pics})`} />
+      <Container>
+        <Image>
+          <img src={table} alt="" />
+        </Image>
+        <Second>
+          <h4>SERVICES</h4>
+          <Held>
+            <h1>
+              <i>We Carefully Planned</i>
+            </h1>
+          </Held>
+          <p>
+            At Chy4real Furnitures, we believe that furniture should not only be
+            functional but also a reflection of your unique personality and
+            taste. Our dedicated team is ready to assist you in bringing your
+            vision to life, whether through customization options or expert
+            advice on selecting the perfect pieces for your space.Indulge in the
+            luxury of Chy4real Furnitures and discover furniture that transcends
+            time, elevates your surroundings, and creates a lasting impression.
+            Step into our hero page and immerse yourself in a world of exquisite
+            design and unparalleled craftsmanship.
+          </p>
+          <p>
+            With a passion for design and an unwavering commitment to
+            excellence, we curate a collection that encompasses a range of
+            styles, from modern minimalism to classic opulence. Every detail is
+            thoughtfully considered, from the choice of premium materials to the
+            precision of craftsmanship.
+          </p>
+          <NavLink
+            to="/products"
+            style={{ color: "white", textDecoration: "none" }}
+          >
             <button>Shop with us</button>
-          </Second>
-        </Container>
-        <Perfect />
-      </div>
-    </Fade>
+          </NavLink>
+        </Second>
+      </Container>
+      <Perfect />
+    </div>
   );
 };
 

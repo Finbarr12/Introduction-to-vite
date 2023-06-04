@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import best from "../Assets/best.jpg";
+import { NavLink } from "react-router-dom";
 
 const OurProject = () => {
   return (
@@ -30,7 +31,12 @@ const OurProject = () => {
           thoughtfully crafted to ensure superior design and long-lasting
           durability.
         </p>
-        <button>Shop with us</button>
+        <NavLink
+          to="/products"
+          style={{ color: "white", textDecoration: "none" }}
+        >
+          <button>Shop with us</button>
+        </NavLink>
       </Second>
     </Container>
   );

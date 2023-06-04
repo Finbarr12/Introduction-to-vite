@@ -1,39 +1,42 @@
 import styled from "styled-components";
 import Countup from "react-countup";
+import { Fade } from "react-awesome-reveal";
 const Intresting = () => {
   return (
     <Container>
-      <Main>
-        <h4>SOME</h4>
-        <h2>Interesting Facts</h2>
-      </Main>
-      <Facts>
-        <Fact>
-          <h3>
-            <Countup start={0} end={18} duration={5} />
-          </h3>
+      <Fade triggerOnce delay={1000}>
+        <Main>
+          <h4>SOME</h4>
+          <h2>Interesting Facts</h2>
+        </Main>
+        <Facts>
+          <Fact>
+            <h3>
+              <Countup start={0} end={18} duration={5} />
+            </h3>
 
-          <p>Years experience</p>
-        </Fact>
-        <Fact>
-          <h3>
-            <Countup start={-1000} end={371} duration={5} />
-          </h3>
-          <p>Happy Clients</p>
-        </Fact>
-        <Fact>
-          <h3>
-            <Countup start={-1000} end={150} duration={5} />
-          </h3>
-          <p>Finished Projects</p>
-        </Fact>
-        <Fact>
-          <h3>
-            <Countup start={-1000} end={230} duration={5} />
-          </h3>
-          <p>Working days</p>
-        </Fact>
-      </Facts>
+            <p>Years experience</p>
+          </Fact>
+          <Fact>
+            <h3>
+              <Countup start={-1000} end={371} duration={5} />
+            </h3>
+            <p>Happy Clients</p>
+          </Fact>
+          <Fact>
+            <h3>
+              <Countup start={-1000} end={150} duration={5} />
+            </h3>
+            <p>Finished Projects</p>
+          </Fact>
+          <Fact>
+            <h3>
+              <Countup start={-1000} end={230} duration={5} />
+            </h3>
+            <p>Working days</p>
+          </Fact>
+        </Facts>
+      </Fade>
     </Container>
   );
 };

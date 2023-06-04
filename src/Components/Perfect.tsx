@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import homes from "../Assets/homes.jpg";
+import { NavLink } from "react-router-dom";
 const Perfect = () => {
   return (
     <Container>
@@ -34,7 +35,12 @@ const Perfect = () => {
           cozy sofas to ergonomic office chairs, we prioritize your comfort
           without compromising on style.
         </p>
-        <button>Shop with us</button>
+        <NavLink
+          to="/products"
+          style={{ color: "white", textDecoration: "none" }}
+        >
+          <button>Shop with us</button>
+        </NavLink>
       </Second>
     </Container>
   );
