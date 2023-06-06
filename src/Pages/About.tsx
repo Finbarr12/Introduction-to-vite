@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import Intresting from "../Components/Interesting";
 import OurProject from "../Components/OurProject";
-// import manager from "../Assets/Manager.webp";
+import manager from "../Assets/Manager.webp";
 import anopics from "../Assets/Finbarr.jpg";
 import room from "../Assets/room.jpg";
 import AllHeros from "../Static/AllHeros";
@@ -29,7 +29,7 @@ const About = () => {
           <Holder>
             <Box>
               <ImgHold>
-                <img src={anopics} alt="" />
+                <img src={manager} alt="" />
               </ImgHold>
               <h3>
                 <i>Ezewugo Chioma</i>

@@ -5,6 +5,7 @@ import DahLayout from "../Block/DahLayout";
 // import Loading from "../Static/Loading";
 // import Products from "../Pages/Products";
 import Privateroute from "./Privateroute";
+import Error from "../Pages/Error";
 
 const Home = lazy(() => import("../Pages/Home"));
 const About = lazy(() => import("../Pages/About"));
@@ -51,6 +52,10 @@ export const MainRoute = createBrowserRouter([
   {
     path: "/signinadmin",
     element: <Signin />,
+  },
+  {
+    path: "*",
+    element: <Error />,
   },
   {
     path: "/dashboard",
